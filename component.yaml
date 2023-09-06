@@ -1,0 +1,73 @@
+teste:
+  description: ''
+  example: estandot1
+  type: string
+teste2:
+  description: ''
+  example: testando2
+  type: string
+teste3:
+  items:
+    properties:
+      endereco:
+        properties:
+          rua:
+            description: ''
+            example: av teste
+            type: string
+        type: object
+      idade:
+        description: ''
+        example: 20
+        type: number
+      nome:
+        description: ''
+        example: apelido
+        type: string
+    type: object
+  type: array
+teste4:
+  properties:
+    subteste1:
+      description: ''
+      example: string
+      type: string
+    subteste2:
+      description: ''
+      example: 1
+      type: number
+    subteste3:
+      description: ''
+      example: 1.32
+      type: number
+    subteste4:
+      description: ''
+      example: true
+      type: boolean
+    subteste5:
+      properties:
+        endereco:
+          properties:
+            rua:
+              description: ''
+              example: av portugues
+              type: string
+          type: object
+        nome:
+          description: ''
+          example: sguilherme
+          type: string
+      type: object
+  type: object
+teste5:
+  description: ''
+  example: 1
+  type: number
+teste6:
+  description: ''
+  example: true
+  type: boolean
+teste7:
+  description: ''
+  example: 1.87
+  type: number

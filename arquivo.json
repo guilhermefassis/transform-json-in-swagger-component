@@ -1,0 +1,28 @@
+{
+    "teste": "estandot1",
+    "teste2": "testando2",
+    "teste5": 1,
+    "teste6": true,
+    "teste7": 1.87,
+    "teste3": [
+        {
+            "nome": "apelido",
+            "idade": 20,
+            "endereco": {
+                "rua": "av teste"
+            }
+        }
+    ],
+    "teste4": {
+        "subteste1": "string",
+        "subteste2": 1,
+        "subteste3": 1.32,
+        "subteste4": true,
+        "subteste5": {
+            "nome": "sguilherme",
+            "endereco": {
+                "rua": "av portugues"
+            }
+        }
+    }   
+}

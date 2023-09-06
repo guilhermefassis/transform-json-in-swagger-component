@@ -6,7 +6,6 @@ def addFieldInJson(value, field, data):
     type_ = type(value)
     
     if type_ == str :
-
         if(len(value) == 0): 
             value = "string"
         data[field] = {
@@ -26,8 +25,7 @@ def addFieldInJson(value, field, data):
                     'description': '',
                     'example' : value
         }
-    elif type_ == dict:
-
+    elif type_ == dict: 
         json2 = value
         data2 = {}
         for key in json2.keys():
@@ -37,6 +35,22 @@ def addFieldInJson(value, field, data):
             'type': "object",
             'properties': data2
         }
+    elif type_ == list:
+        list_ = value
+        listItem = list_[0]
+        data2 = {}
+
+        addFieldInJson(listItem, field, data2)
+        data[field] = {
+            'type': 'array',
+            'items': data2[field]
+        }
+    else:
+         data[field] = {
+                    'type': 'string',
+                    'description': '',
+        }
+    
 
 json_path = input("Passe o path do arquivo json: ")
 outsource = 'component.yaml'
@@ -63,16 +77,13 @@ for key in json_data.keys():
         listItem = list_[0]
         data2 = {}
 
-
         addFieldInJson(listItem, key, data2)
         data[key] = {
             'type': 'array',
             'items': data2[key]
         }
-
     else:
         addFieldInJson(json_data[key], key, data)
 
-    print(data)
 with open(outsource, 'w') as archive:
-    yaml.dump(data, archive)
+    yaml.dump(data, archive, sort_keys=False)
